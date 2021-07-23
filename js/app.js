@@ -216,7 +216,6 @@
   "use strict";
 
     var images = document.querySelectorAll(".logo-list img");
-    var logoLists = document.querySelectorAll(".logo-list");
 
     function adjustImageWidth(image) {
         var widthBase   = 80;
@@ -229,15 +228,12 @@
     images.forEach(function(image){
       if (image.complete) {
         adjustImageWidth(image);
-        image.classList.add("logo-list-image-active");
       } else {
         image.addEventListener("load", event => {
           adjustImageWidth(image);
-          image.classList.add("logo-list-image-active");
         });
       }
     });
-    logoLists.forEach(activateLogoList);
 
 })();
 
