@@ -1,0 +1,29 @@
+html {
+  &.-inactive {
+    overflow: hidden;
+
+    @include media-breakpoint-up(lg) {
+      overflow: initial;
+    }
+  }
+}
+
+body {
+  @include media-breakpoint-up(lg) {
+    padding-bottom: 0;
+  }
+
+  &.-inactive {
+    overflow: hidden;
+    height: 100%;
+    
+    @include media-breakpoint-up(lg) {
+      overflow: initial;
+      height: initial;
+    }
+  }
+}
+
+body, html {
+  text-rendering: optimizeLegibility;
+}

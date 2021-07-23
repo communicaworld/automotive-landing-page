@@ -1,0 +1,45 @@
+.main-footer {
+  padding: 2.5rem 0;
+  background: $off-black;
+  color: $white;
+
+  .container-xl {
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .main-footer-logo {
+    width: 100%;
+    max-width: 16rem;
+    margin-bottom: 2rem;
+
+    @include media-breakpoint-up(lg) {
+      margin-right: 6rem;
+      margin-bottom: 0;
+    }
+  }
+
+  .main-footer-contact {
+    
+  }
+
+  .main-footer-contact-main {
+    color: $secondary;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: .5rem;
+
+    a {
+      color: $secondary;
+    }
+  }
+
+  .main-footer-contact-locations {
+    font-weight: 500;
+  }
+}

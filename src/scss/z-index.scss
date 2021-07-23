@@ -1,0 +1,18 @@
+// **************************************************************************
+//
+// Z-INDEX
+//
+// Maintain a register of the z-index variables you specify throughout the 
+// layout so it's easy to tell where elements are placed in the layering.
+//
+// **************************************************************************
+
+$z-index-base: 1;
+$z-index-base-plus: 2;
+
+
+
+$main-header-z-index: 9900;
+$privacy-notice-z-index: 9910;
+$main-header-mobile-close-z-index: 9950;
+$mobile-header-z-index: 10000;

@@ -1,0 +1,13 @@
+.social-menu {
+  margin: .5rem 0 0 0;
+  font-size: 1.25rem;
+
+  .social-menu-item {
+    margin-right: .5rem;
+    transition: color .25s ease-in-out;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.logo-header {
+  .container-xl {
+    display: flex;
+    justify-content: center;
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+    border-bottom: 1px solid $gray-600;
+  }
+  .logo-header-logo {
+    display: block;
+    width: 100%;
+    max-width: 18rem;
+  }
+}

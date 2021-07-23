@@ -1,0 +1,19 @@
+// **************************************************************************
+//
+// Make Fluid Container
+//
+// Designates elements with standard Bootstrap container rules and applies a 
+// single max-width to the container.
+//
+// @param string $size Map key in $container-max-widths in 
+// /src/scss/config.scss
+//
+// @return width, max-width, padding-left, padding-right, margin-right,
+//         margin-left
+//
+// **************************************************************************
+
+@mixin make-fluid-container($size) {
+  max-width: map-get($container-max-widths, $size);
+  @include make-container();
+}

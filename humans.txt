@@ -1,0 +1,40 @@
+/**
+ *
+ * http://humanstxt.org
+ *
+ * An initiative to know the creators of a website.
+ *
+ * Last Update: 2/18/2021
+ *
+ */
+
+/**
+ *
+ * TEAM
+ *
+ * Keep a running log of everyone who's been in here. 
+ * Add your name, work email, and other contact details.
+ *
+ */
+
+Company:  Communica, Inc.
+Location: Toledo, Ohio
+Website:  https://www.communica.world
+Email:    info@communica.world
+Github:   https://github.com/communicaworld
+
+Developer: Dan Paquette
+Email:     dan@communica.world
+
+Developer: Jason Yoakam
+Email:     jyoakam@communica.world
+
+/**
+ *
+ * SITE
+ *
+ */
+
+Standards: HTML, CSS, Open Graph
+Components: Brand Colors, Bootstrap, Slick Carousel
+Software: VSCode, NodeJS, NPM, Gulp, Github

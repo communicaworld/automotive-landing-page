@@ -1,0 +1,229 @@
+// **************************************************************************
+//
+// CONFIG
+//
+// Include all setting variables and vendor override settings in this 
+// global register.
+//
+// **************************************************************************
+
+// **************************************************************************
+//
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+//
+// **************************************************************************
+
+$spacer: 1rem !default;
+
+$paragraph-margin-bottom:   $spacer * 1.5;
+
+// **************************************************************************
+//
+// Color
+//
+// Global color settings.
+//
+// **************************************************************************
+
+// Grayscale
+
+$white:    #fff;
+$gray-100: #f4f4f4;
+$gray-200: #efefef;
+$gray-300: #e8e8e8;
+$gray-400: #dcdcdc;
+$gray-500: #b7b7b7;
+$gray-600: #737373;
+$gray-700: #525252;
+$gray-800: #343434;
+$gray-900: #232323;
+$black:    #000;
+
+// Rainbow Scale
+
+$blue:    #009fdf;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #e83e8c;
+$red:     #e64b38;
+$orange:  #e7792c;
+$yellow:  #ffc107;
+$green:   #4b858e;
+$teal:    #00bfb3;
+$cyan:    #42c4dd;
+$tan:     #aca199;
+$carbon:  #415364;
+
+// Bootstrap States
+
+$primary:       $orange;
+$secondary:     $cyan;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $gray-100;
+$dark:          $gray-800;
+
+// Body Color
+// Settings for the `<body>` element.
+
+$body-bg:      $white;
+$body-color: #231f20;
+
+// Custom Colors
+
+$light-blue: #f1f9ff;
+$off-black: #000104;
+$cod-gray: #070808;
+$off-gray: #f2f1ed;
+
+// **************************************************************************
+//
+// Grid
+//
+// Global grid settings.
+//
+// **************************************************************************
+
+// Grid Breakpoints
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1330px
+);
+
+// Container Settings
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  xs: 354px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1360px
+);
+
+// Grid Columns
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+
+// **************************************************************************
+//
+// Typography
+//
+// Global typography settings.
+//
+// **************************************************************************
+
+// Global Font Stacks
+
+$font-family-sans-serif: 'Raleway' -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+$font-family-serif: Palatino, 'Palatino Linotype', 'Hoefler Text', Times, 'Times New Roman', serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+$font-family-base: $font-family-sans-serif;
+$line-height-base: 1.5;
+$font-weight-base: 300;
+$font-size-base: .9rem;
+
+// Headings
+
+$headings-font-weight: 600;
+$headings-font-style: normal;
+$headings-font-family: $font-family-sans-serif;
+$headings-color: $body-color;
+$headings-margin-bottom: $spacer * 1.5;
+$headings-line-height: 1.2;
+
+$h1-font-size: $font-size-base * 3.75;
+$h2-font-size: $font-size-base * 3.25;
+$h3-font-size: $font-size-base * 2.5;
+$h4-font-size: $font-size-base * 2;
+$h5-font-size: $font-size-base * 1.75;
+$h6-font-size: $font-size-base;
+
+// **************************************************************************
+//
+// Links
+//
+// Global link settings.
+//
+// **************************************************************************
+
+$link-color:                $blue;
+$link-decoration:           none;
+$link-hover-color:          lighten($link-color, 15%);
+$link-hover-decoration:     underline;
+
+// **************************************************************************
+//
+// Button
+//
+// Global button settings.
+//
+// **************************************************************************
+
+$input-padding-y:             .375rem;
+$input-padding-x:             1rem;
+$input-btn-font-family:       null;
+$input-btn-font-size:         .8125rem;
+$input-bg:                    $gray-200;
+$input-disabled-bg:           $white;
+$input-color:                 $gray-700;
+$input-border-color:          $gray-200;
+$input-border-radius:         0;
+$input-border-radius-lg:      0;
+$input-border-radius-sm:      0;
+
+$btn-border-radius:           0;
+$btn-border-radius-lg:        0;
+$btn-border-radius-sm:        0;
+$btn-font-size-lg:            $input-btn-font-size;
+
+$input-btn-padding-y:         .5rem;
+$input-btn-padding-x:         2rem;
+$input-btn-padding-y-lg:      1rem;
+$input-btn-padding-x-lg:      3rem;
+
+$component-active-bg: $blue;
+
+// **************************************************************************
+//
+// Components
+//
+// Component-level configurations
+//
+// **************************************************************************
+
+// Navigation
+
+$main-navigation-height: 7.1875rem;
+$ancillary-navigation-height:	3.25rem;
+$mobile-header-height: 4rem;
+
+// Section
+
+$theme-colors: (
+  white: $white,
+  off-gray: $off-gray,
+  cod-gray: $cod-gray,
+);
+
+$theme-padding: (
+  none: 0,
+  half-x: 2rem,
+  one-x: 5rem,
+  two-x: 10rem,
+);

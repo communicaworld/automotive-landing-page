@@ -1,0 +1,9 @@
+label {
+  font-weight: bold;
+}
+
+input[type=checkbox] + label,
+input[type=radio] + label {
+  font-weight: normal;
+  cursor: pointer;
+}

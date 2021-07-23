@@ -1,0 +1,31 @@
+{
+  "name": "cmca-automotive-landing-page",
+  "version": "1.0.0",
+  "description": "Communica Automotive Landing Page",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "animated-scroll-to": "^2.0.12",
+    "autoprefixer": "^10.2.3",
+    "bootstrap": "^4.6.0",
+    "brand-colors": "^2.1.1",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-cli": "^2.3.0",
+    "gulp-postcss": "^9.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "install": "^0.13.0",
+    "node-sass": "^5.0.0",
+    "npm": "^6.14.11",
+    "postcss": "^8.2.4"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ],
+  "scripts": {
+    "test": "gulp"
+  },
+  "author": "Communica",
+  "license": "UNLICENSED"
+}

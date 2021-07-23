@@ -1,0 +1,14 @@
+.address-block {
+  order: 1;
+  display: block;
+  margin-bottom: 3rem;
+
+  @include media-breakpoint-up(lg) {
+    order: 2;
+    margin: 0;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+}

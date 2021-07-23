@@ -1,0 +1,40 @@
+.section {
+  padding: 0;
+  background-size: cover;
+  background-position: center center;
+
+  @each $name, $width in $theme-padding {
+
+    &.section-padding-top-#{$name} {
+      padding-top: $width;
+    }
+
+    &.section-padding-bottom-#{$name} {
+      padding-bottom: $width;
+    }
+  }
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  @each $name, $color in $theme-colors {
+
+    &.section-background-#{$name} {
+      background-color: $color;
+      color: adjust-text-color($color);
+
+      h1, h2, h3, h4, h5, h6,
+      .h1, .h2, .h3, .h4, .h5, .h6 {
+        color: adjust-heading-color($color);
+      }
+
+      a:not(.btn) {
+        color: adjust-link-color($color);
+      }
+      a:not(.btn):hover {
+        color: adjust-link-hover-color($color);
+      }
+    }
+  }
+}

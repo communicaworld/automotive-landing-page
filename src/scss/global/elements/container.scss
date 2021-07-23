@@ -1,0 +1,17 @@
+// **************************************************************************
+//
+// CONTAINER
+//
+// Adds container elements that are fluid-width as opposed to the adaptive
+// width container included in Bootstrap.
+//
+// **************************************************************************
+
+@each $name, $width in $container-max-widths {
+  .container-#{$name} {
+    @include make-container();
+    max-width: $width;
+  }
+}
+
+

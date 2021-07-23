@@ -1,0 +1,9 @@
+##
+#
+# https://www.robotstxt.org/
+#
+# A standards-driven method for communicating with web crawlers and other web robots.
+#
+##
+
+User-agent: *

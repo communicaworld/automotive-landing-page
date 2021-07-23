@@ -1,0 +1,41 @@
+// **************************************************************************
+//
+// Adjust Text Color
+//
+// **************************************************************************
+
+@function adjust-text-color($color) {  
+  @if (lightness( $color ) > 60) {
+    @return $body-color;
+  }
+  @else {
+    @return $white;
+  }
+}
+
+@function adjust-heading-color($color) {  
+  @if (lightness( $color ) > 60) {
+    @return $headings-color;
+  }
+  @else {
+    @return $white;
+  }
+}
+
+@function adjust-link-color($color) {  
+  @if (lightness( $color ) > 60) {
+    @return $link-color;
+  }
+  @else {
+    @return $white;
+  }
+}
+
+@function adjust-link-hover-color($color) {  
+  @if (lightness( $color ) > 60) {
+    @return $link-hover-color;
+  }
+  @else {
+    @return $white;
+  }
+}

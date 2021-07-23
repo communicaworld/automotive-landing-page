@@ -1,0 +1,40 @@
+# Default Extensions
+*.diff
+*.err
+*.log
+*.orig
+*.rej
+*.swo
+*.swp
+*.vi
+*.zip
+*.iml
+*~
+
+# OS/Editor Files/Folders
+._*
+.cache
+.DS_Store
+.project
+.settings
+.tmproj
+.idea
+*.esproj
+*.sublime-project
+*.sublime-workspace
+nbproject
+Thumbs.db
+
+# Development Tools
+node_modules
+vendor
+.vagrant
+.env
+
+# Project Folders
+
+/dist/users/*
+!/dist/users/.gitkeep
+/dist/public/css
+/dist/storage/glide/
+/dist/storage/statamic/
