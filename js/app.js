@@ -118,7 +118,7 @@
     type: 'carousel',
     hoverpause: true,
     perView: 5,
-    swipeThreshold: 40,
+    swipeThreshold: 15,
     breakpoints: {
       1200: {
         perView: 4
