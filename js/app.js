@@ -118,6 +118,7 @@
     type: 'carousel',
     hoverpause: true,
     perView: 5,
+    swipeThreshold: 40,
     breakpoints: {
       1200: {
         perView: 4
@@ -134,11 +135,6 @@
     }
   }).mount();
 })();
-
-
-
-
-
 
 (function() {
 
