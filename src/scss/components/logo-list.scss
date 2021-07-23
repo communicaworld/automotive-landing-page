@@ -1,9 +1,4 @@
 .logo-list {
-  opacity: 0;
-
-  &.logo-list-active {
-    opacity: 1;
-  }
 
   .logo-list-item {
     padding: 1rem 2rem;
@@ -16,5 +11,6 @@
 
   .logo-list img {
     max-width: 100%;
+    width: 0;
   }
 }

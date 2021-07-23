@@ -1,13 +1,17 @@
 .call-now-button {
   display: inline-block;
   font-weight: bold;
-  font-size: 1.35rem;
+  font-size: 1rem;
   padding: 1rem 1.75rem;
   background: $off-black;
   line-height: 1;
   color: $white;
   transition: background-color .25s ease-in-out;
   margin-bottom: 1.5rem;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1.35rem;
+  }
 
   &:hover {
     color: $white;
@@ -23,8 +27,14 @@
     border-radius: 100%;
     background: $primary;
     color: $black;
-    font-size: 1.15rem;
-    width: 2.25rem;
-    height: 2.25rem;
+    font-size: .85rem;
+    width: 1.5rem;
+    height: 1.5rem;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 1.15rem;
+      width: 2.25rem;
+      height: 2.25rem;
+    }
   }
 }

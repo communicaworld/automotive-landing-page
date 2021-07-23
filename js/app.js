@@ -215,8 +215,6 @@
 
   "use strict";
 
-  window.onload = function() {
-
     var images = document.querySelectorAll(".logo-list img");
     var logoLists = document.querySelectorAll(".logo-list");
 
@@ -227,15 +225,19 @@
 
         image.width = Math.pow(imageRatio, scaleFactor) * widthBase;
     }
-    
-    function activateLogoList(logoList) {
-        logoList.classList.add("logo-list-active");
-    }
 
-    images.forEach(adjustImageWidth);
+    images.forEach(function(image){
+      if (image.complete) {
+        adjustImageWidth(image);
+        image.classList.add("logo-list-image-active");
+      } else {
+        image.addEventListener("load", event => {
+          adjustImageWidth(image);
+          image.classList.add("logo-list-image-active");
+        });
+      }
+    });
     logoLists.forEach(activateLogoList);
-
-  };
 
 })();
 
