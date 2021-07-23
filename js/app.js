@@ -1,108 +1,148 @@
-(function (root, factory) {
+(function() {
 
-  if (typeof define === 'function' && define.amd) {
+  // Video Modal
+
+  'use-strict';
+
+  (function (root, factory) {
+
+    if (typeof define === 'function' && define.amd) {
       define([], factory);
-  } else if (typeof exports === 'object') {
+    } else if (typeof exports === 'object') {
       module.exports = factory();
-  } else {
+    } else {
       root.VideoModal = factory();
+    }
   }
-}(this, function () {
+  
+  (this, function () {
 
-  var VideoModal = function (element) {
+    var VideoModal = function (element) {
       if (!this || !(this instanceof VideoModal)) {
-          return new VideoModal(element);
+        return new VideoModal(element);
       }
 
       this.selector = document.querySelectorAll(element);
       this.root     = document.querySelector('body');
       this.run();
-  };
+    };
 
-  VideoModal.prototype = {
+    VideoModal.prototype = {
       run: function () {
-          Array.prototype.forEach.call(this.selector, function (el) {
-              el.addEventListener('click', function (e) {
-                  e.preventDefault();
+        Array.prototype.forEach.call(this.selector, function (el) {
+          el.addEventListener('click', function (e) {
+            e.preventDefault();
 
-                  var link = this.parseUrl(el.getAttribute('href'));
-                  this.render(link);
-                  this.close();
-              }.bind(this), false);
-          }.bind(this));
+            var link = this.parseUrl(el.getAttribute('href'));
+            this.render(link);
+            this.close();
+          }.bind(this), false);
+        }.bind(this));
       },
       template: function (s, d) {
-          var p;
+        var p;
 
-          for (p in d) {
-              if (d.hasOwnProperty(p)) {
-                  s = s.replace(new RegExp('{' + p + '}', 'g'), d[p]);
-              }
+        for (p in d) {
+          if (d.hasOwnProperty(p)) {
+            s = s.replace(new RegExp('{' + p + '}', 'g'), d[p]);
           }
-          return s;
+        }
+        return s;
       },
       parseUrl: function (url) {
-          var service = {},
-              matches;
+        var service = {},
+          matches;
 
-          if (matches = url.match(/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/)) {
-              service.provider = "youtube";
-              service.id       = matches[2];
-          } else if (matches = url.match(/https?:\/\/(?:www\.)?vimeo.com\/(?:channels\/|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|)(\d+)(?:$|\/|\?)/)) {
-              service.provider = "vimeo";
-              service.id       = matches[3];
-          } else {
-              service.provider = "Unknown";
-              service.id       = '';
-          }
+        if (matches = url.match(/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/)) {
+          service.provider = "youtube";
+          service.id       = matches[2];
+        } else if (matches = url.match(/https?:\/\/(?:www\.)?vimeo.com\/(?:channels\/|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|)(\d+)(?:$|\/|\?)/)) {
+          service.provider = "vimeo";
+          service.id       = matches[3];
+        } else {
+          service.provider = "Unknown";
+          service.id       = '';
+        }
 
-          return service;
+        return service;
       },
       render: function (service) {
-          var embedLink,
-              lightbox;
+        var embedLink,
+            lightbox;
 
-          if (service.provider === 'youtube') {
-              embedLink = 'https://www.youtube.com/embed/' + service.id;
-          } else if (service.provider === 'vimeo') {
-              embedLink = 'https://player.vimeo.com/video/' + service.id;
-          } else {
-              throw new Error("Invalid video URL");
-          }
+        if (service.provider === 'youtube') {
+          embedLink = 'https://www.youtube.com/embed/' + service.id;
+        } else if (service.provider === 'vimeo') {
+          embedLink = 'https://player.vimeo.com/video/' + service.id;
+        } else {
+          throw new Error("Invalid video URL");
+        }
 
-          lightbox = this.template(
-              '<div class="videomodal-wrap"><div class="videomodal-content"><span class="videomodal-close"></span><iframe src="{embed}?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></div>', {
-                  embed: embedLink
-              });
+        lightbox = this.template(
+          '<div class="videomodal-wrap"><div class="videomodal-content"><span class="videomodal-close"></span><iframe src="{embed}?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></div>', {
+          embed: embedLink
+        });
 
-          this.root.insertAdjacentHTML('beforeend', lightbox);
+        this.root.insertAdjacentHTML('beforeend', lightbox);
       },
       close: function () {
-          var wrapper = document.querySelector('.videomodal-wrap');
+        var wrapper = document.querySelector('.videomodal-wrap');
 
-          wrapper.addEventListener('click', function (e) {
-              if (e.target && e.target.nodeName === 'SPAN' && e.target.className === 'videomodal-close') {
-                  wrapper.classList.add('videomodal-hide');
-                  setTimeout(function() {
-                      this.root.removeChild(wrapper);
-                  }.bind(this), 500);
-              }
-          }.bind(this), false);
+        wrapper.addEventListener('click', function (e) {
+          if (e.target && e.target.nodeName === 'SPAN' && e.target.className === 'videomodal-close') {
+            wrapper.classList.add('videomodal-hide');
+              setTimeout(function() {
+                this.root.removeChild(wrapper);
+            }.bind(this), 500);
+          }
+        }.bind(this), false);
       }
-  };
+    };
 
-  return VideoModal;
-}));
+    return VideoModal;
+  }));
 
-document.addEventListener('DOMContentLoaded', function() {
-  VideoModal('.video-modal-trigger');
-});
+  document.addEventListener('DOMContentLoaded', function() {
+    VideoModal('.video-modal-trigger');
+  });
+
+})();
+
+(function() {
+
+  // Logo Scroller
+
+  'use-strict';
+
+  var glideMulti = new Glide('.logo-scroller', {
+    type: 'carousel',
+    hoverpause: true,
+    perView: 5,
+    breakpoints: {
+      1200: {
+        perView: 4
+      },
+      768: {
+        perView: 3
+      },
+      576: {
+        perView: 2
+      },
+      348: {
+        perView: 1
+      }
+    }
+  }).mount();
+})();
+
+
+
 
 
 
 (function() {
 
-    // Anchor Scroller
+  // Anchor Scroller
 
   'use-strict';
 
@@ -177,11 +217,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   window.onload = function() {
 
-    var images = document.querySelectorAll(".pc-logo-list img");
-    var logoLists = document.querySelectorAll(".pc-logo-list");
+    var images = document.querySelectorAll(".logo-list img");
+    var logoLists = document.querySelectorAll(".logo-list");
 
     function adjustImageWidth(image) {
-        var widthBase   = 65;
+        var widthBase   = 80;
         var scaleFactor = 0.525;
         var imageRatio  = image.naturalWidth / image.naturalHeight;
 
@@ -189,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function activateLogoList(logoList) {
-        logoList.classList.add("pc-logo-list-active");
+        logoList.classList.add("logo-list-active");
     }
 
     images.forEach(adjustImageWidth);
@@ -197,21 +237,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   };
 
-}());
-
-$('.testimonial-slider').slick({
-
-  // Testimonial slider
-
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  dots: true,
-  infinite: true,
-  cssEase: 'linear',
-  arrows: false
-});
+})();
 
 (function() {
+
+  // Privacy Notice
+
+  "use strict";
       
   var settings = {
     cookieExpiration: 365,

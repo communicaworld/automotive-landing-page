@@ -1,0 +1,20 @@
+.logo-list {
+  opacity: 0;
+
+  &.logo-list-active {
+    opacity: 1;
+  }
+
+  .logo-list-item {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    height: auto;
+  };
+
+  .logo-list img {
+    max-width: 100%;
+  }
+}

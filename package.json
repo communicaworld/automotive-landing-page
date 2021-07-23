@@ -4,6 +4,7 @@
   "description": "Communica Automotive Landing Page",
   "main": "gulpfile.js",
   "devDependencies": {
+    "@glidejs/glide": "^3.4.1",
     "animated-scroll-to": "^2.0.12",
     "autoprefixer": "^10.2.3",
     "bootstrap": "^4.6.0",
