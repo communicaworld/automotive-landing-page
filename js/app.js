@@ -117,7 +117,7 @@
   var glideMulti = new Glide('.logo-scroller', {
     type: 'carousel',
     hoverpause: true,
-    autoplay: 5000,
+    autoplay: 3000,
     perView: 5,
     swipeThreshold: 15,
     breakpoints: {
